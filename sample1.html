@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Double Click</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="main.js"></script>
+<script> 
+$(document).ready(function(){
+  $("div").dblclick(function(){
+    $( this ).toggleClass("divClass2");
+  });
+});
+
+ $(document).ready(function() { 
+    $("button").click(function() { 
+        $("#abc").toggle(); 
+            }); 
+        }); 
+
+ function fadeToggle(div_id, button) {
+
+        if (button.value == 'Fade Out') {
+            $('#' + div_id).fadeOut('slow');
+            button.value = 'Fade In';
+        } else {
+            $('#' + div_id).fadeIn(2000);
+            button.value = 'Fade Out';
+        }
+    }
+    
+    function fadeToToggle(div_id, button) {
+
+        if (button.value == 'FadeTo 50%') {
+            $('#' + div_id).fadeTo('slow' , 0.5);
+            button.value = 'FadeTo 100%';
+        } else {
+            $('#' + div_id).fadeTo(4000 , 1.0);
+            button.value = 'FadeTo 50%';
+        }
+    }
+    </script> 
+ 
+<style> 
+.divClass1
+{
+    padding:5px;
+    text-align:center;
+    background-color:blue;
+    border:solid 1px;
+}
+.divClass2
+{
+    padding:5px;
+    text-align:center;
+    background-color:red;
+    border:solid 1px;
+} 
+        #abc { 
+            color: green; 
+            border: 5px solid black; 
+            width: 200px; 
+            text-align: center;
+            position: absolute;
+            top :100px; 
+        }
+        #bt1
+        {
+            position: absolute;
+            top : 75px;
+        }
+
+        body,input {
+    font-family: Helvetica, Arial;
+    background-color:  lightgrey;
+}
+
+#fade, #fadeTo {
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: yellow;
+}  
+.id1
+{
+    position: absolute;
+    top: 150px;
+}
+.id2
+{
+    position: absolute;
+    top:400px;
+}
+</style>
+</head>
+<body>
+<div class="divClass1">Welcome to JS Frameworks</div>
+<button id="bt1">Click here to hide and show</button>
+<div id="abc">Hello Everyone!</div>
+<div class = "id1">
+<input type="button" value="Fade Out" onclick="fadeToggle('fade', this)" />
+    <br><br>
+    
+    <div id="fade">On clicking it should be disappear</div>
+    <br>
+    
+    <input type="button" value="FadeTo 50%" onclick="fadeToToggle('fadeTo', this)" />
+    <div id="fadeTo">On click , it fades to 50%</div>
+</div>
+
+<div class="id2"> 
+      <h1>Fetch API GET REQUEST</h1> 
+      <h3>Fetching Users</h3> 
+  
+      <!-- Table to display fetched user data -->
+      <table id="users"></table> 
+    </div> 
+</body>
+</html>
